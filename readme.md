@@ -9,4 +9,8 @@ I created this to speed up my design audit process.
 * Place driver in "seleniumdrivers" folder
 * Place in PATH environment variable 
 
-
+## Later
+* Use Selenium to detect if pop-up has shown up on screen
+* Error handing for: 
+  * If website title has "." or "/" in title which won't work 
+    * Or I could use Regex to strip away any non folder/filename friendly characters   
