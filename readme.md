@@ -32,3 +32,17 @@ https://chromedriver.storage.googleapis.com/index.html
 * Error handling
 * CLI(?)
 * Flask server? Could create a simple API. 
+
+## Version 2: CLI
+- [x] Prototype with single URL's
+- [x] Accept inputs via command and add to list
+- [x] Check URL validity
+- [ ] Figure out way to have multiple URLs inputted via CLI, with option to add another vs. run script 
+- [ ] Refactor code as learning exercise - probably want an init to spin up chromedriver once 
+
+## Version 3: Create Flask app 
+- [ ] As a test, make sure I can deploy Selenium properly - main bottleneck 
+- [ ] Front-end UI for accepting URLs (probably want limit)
+- [ ] Refactor code to accept URL's with a rate limit
+- [ ] Host output somewhere and add to downloads 
+- [ ] Low-key style 
