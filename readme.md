@@ -1,5 +1,5 @@
 # Hipshot
-Hipshot is a python tool that will take desktop and mobile screenshots of any site you need. You can do so individually or pass in a list of URLs. I needed this and built my own tool after not being too satisfied with what exists. 
+Hipshot is a python tool that will take desktop and mobile screenshots of any site you need. I needed this and built my own tool after not being too satisfied with what exists. 
 
 ## How to use 
 
