@@ -1,7 +1,7 @@
 import argparse
 import sys
 import re
-
+import V0_app
 
 # Flow
 ## 1. Run script
@@ -37,6 +37,7 @@ url = args.url
 print(url)
 
 if is_valid_url(url):
+    V0_app.single_URL_screenshot(url)
     print("Valid URL")
     url_list = [url]
 else:
