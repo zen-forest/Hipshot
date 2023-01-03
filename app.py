@@ -1,22 +1,27 @@
 import os
 from selenium import webdriver 
 from selenium.webdriver.chrome.service import Service
-
+from selenium.webdriver.chrome.options import Options
 
 
 
 # Get the current working directory
 cwd = os.getcwd()
 
-urls = [ "https://www.harborfreight.com",
-         "https://www.bose.com/en_us/index.html",
-         "https://www.onepeloton.com/",
-         "https://www.everlane.com/products/mens-organic-slim-fit-jean-faded-sky?collection=mens-bestsellersv2",
-         "https://www.whirlpool.com/",
-         "https://www.homedepot.com/",
-         "https://store.google.com/us/category/connected_home?hl=en-US&GoogleNest&utm_source=nest_redirect&utm_medium=google_oo&utm_campaign=homepage&pli=1",
+urls = [ "https://www.everlane.com/products/mens-organic-slim-fit-jean-faded-sky?collection=mens-bestsellersv2",
+         "https://www.specialized.com/us/en/turbo-levo-comp-carbon/p/216806?color=349650-216806",
+         "https://www.bose.com/en_us/products/headphones/noise_cancelling_headphones/quietcomfort-headphones-45.html#v=qc45_black",
+         "https://www.onepeloton.com/tread",
          "https://www.beatsbydre.com/earbuds/studio-buds?sku=MJ503",
-         "https://www.outdoorvoices.com"
+         "https://www.standstilltea.com/product/oolong",
+         "https://www.harborfreight.com/vertical-milling-machine-40939.html",
+         "https://www.woodcraft.com/products/shark-sd110-cnc-machine-next-wave?via=573621bd69702d0676000002%2C5763ffe769702d6582000e3a",
+         "https://www.samsung.com/us/home-appliances/refrigerators/bespoke/bespoke-3-door-french-door-refrigerator--30-cu--ft---with-autofill-water-pitcher-in-stainless-steel-rf30bb6200qlaa/",
+         "https://www.samsung.com/us/home-appliances/cooktops-and-hoods/electric-cooktops/30--built-in-electric-cooktop-with-rapid-boil-nz30k6330rs-aa/",
+         "https://www.whirlpool.com/kitchen/cooking/cooktops/electric/p.24-inch-compact-electric-ceramic-glass-cooktop.wce55us4hb.html?",
+         "https://www.samsung.com/us/home-appliances/cooktops-and-hoods/electric-cooktops/30--built-in-electric-cooktop-with-rapid-boil-nz30k6330rs-aa/"
+         "https://www.electrolux.com/en/p/kitchen/refrigerators/french-door-refrigerators/ERFC2393AS",  
+         "https://www.lg.com/us/washer-dryer-combos/lg-LUWM101HWA-washer-dryer-combo-lgsignature",
 ]
 
 def take_screenshots(url):
@@ -24,24 +29,35 @@ def take_screenshots(url):
   s = Service('/user/local/bin/chromerdriver')
   driver = webdriver.Chrome()
   
+# set up chrome options
+  chrome_options = Options()
+  chrome_options.add_argument("--headless")
+
   # Point the driver towards the URL
   driver.get(url)
   
   # Get the page 
   page_title = driver.title
-  
+  folder_name = "OutputFolder"
+
+  # Create a new output folder
+  os.makedirs(folder_name)
+
   # Create a new folder
   os.makedirs(page_title)
   
+  # Size for desktop
+  driver.set_window_size(1100, 9080)
+
   # Create valid screenshots paths for folders and files
-  screenshot_path = os.path.join(cwd, f"{page_title}", f" {page_title}desktop.png")
-  screenshot_path_mobile = os.path.join(cwd, f"{page_title}", f" {page_title}mobile.png")
+  screenshot_path = os.path.join(cwd, f"/{folder_name}/{page_title}", f" {page_title}desktop.png")
+  screenshot_path_mobile = os.path.join(cwd, f"/{folder_name}/{page_title}", f" {page_title}mobile.png")
   
   # Take desktop screenshot
   driver.save_screenshot(screenshot_path)
   
   # Resize and take mobile screenshot
-  driver.set_window_size(375, 2080)
+  driver.set_window_size(375, 4080)
   driver.save_screenshot(screenshot_path_mobile)
 
   # Print status message
