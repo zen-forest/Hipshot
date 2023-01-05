@@ -71,5 +71,10 @@ def automate(urls):
   for url in urls:
     take_screenshots(url)
 
-automate(urls)
+# automate(urls)
 
+class test():
+  def __init__(self):
+    print("class init-ed")
+  def take_screenshots():
+    print("screenshot taken")
