@@ -45,4 +45,4 @@ https://chromedriver.storage.googleapis.com/index.html
 - [ ] Front-end UI for accepting URLs (probably want limit)
 - [ ] Refactor code to accept URL's with a rate limit
 - [ ] Host output somewhere and add to downloads 
-- [ ] Low-key style 
+- [ ] Dark mode, clean lines, etc.
